@@ -24,7 +24,7 @@ public class AuthController {
 
     @PostMapping("/admin/login")
     public ResponseEntity<LoginResponse> loginAdmin(@Valid @RequestBody LoginRequest request) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(authService.loginAdmin(request));
+        return ResponseEntity.ok(authService.loginAdmin(request));
     }
 
 }

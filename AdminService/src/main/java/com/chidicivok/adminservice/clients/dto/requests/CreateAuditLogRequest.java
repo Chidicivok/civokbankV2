@@ -1,4 +1,4 @@
-package com.chidicivok.adminservice.clients.dto;
+package com.chidicivok.adminservice.clients.dto.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
