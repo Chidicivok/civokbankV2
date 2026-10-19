@@ -53,21 +53,7 @@ public class SecurityConfig {
         return NimbusJwtDecoder.withSecretKey(secretKey).macAlgorithm(MacAlgorithm.HS256).build();
     }
 
-//
-//    @Bean
-//    public JwtAuthenticationConverter jwtAuthenticationConverter() {
-//
-//        JwtGrantedAuthoritiesConverter authorities = new JwtGrantedAuthoritiesConverter();
-//
-//        authorities.setAuthoritiesClaimName("role");
-//        authorities.setAuthorityPrefix("ROLE_");
-//
-//        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
-//
-//        converter.setJwtGrantedAuthoritiesConverter(authorities);
-//
-//        return converter;
-//    }
+
 
 
 }

@@ -33,6 +33,9 @@ public class Notification {
     @Column(name = "notification_type", nullable = false)
     private NotificationType notificationType;
 
+    @Column(name = "target_name", nullable = false)
+    private String targetName;
+
     @Column(name = "body", nullable = false)
     private String body;
 

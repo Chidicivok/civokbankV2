@@ -1,0 +1,10 @@
+package com.chidicivok.customerservice.enums;
+
+public enum NotificationType {
+    CUSTOMER_ACCOUNT_CREATED,
+    CUSTOMER_CITY_CHANGED,
+    CUSTOMER_EMAIL_CHANGED,
+    CUSTOMER_PHONE_CHANGED,
+    CUSTOMER_PASSWORD_CHANGED,
+    CUSTOMER_PASSWORD_RESET
+}

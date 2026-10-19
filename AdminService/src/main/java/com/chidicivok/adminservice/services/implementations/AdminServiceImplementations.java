@@ -142,6 +142,7 @@ public class AdminServiceImplementations implements AdminService {
                 new CreateNotificationRequest(
                         targetAdmin.getId(),
                         TargetType.ADMIN,
+                        targetAdmin.getFirstName() + " " + targetAdmin.getLastName(),
                         targetAdmin.getEmail(),
                         notificationType,
                         body
@@ -204,7 +205,7 @@ public class AdminServiceImplementations implements AdminService {
 
         try {
             log("Change Administrator Name(S)",
-                    "Administrator name has been changed from \"" + previousFirstName + " " + previousLastName + "\"",
+                    "Administrator name has been changed from \"" + previousFirstName + " " + previousLastName + "\"\nTo " + saved.getFirstName() + " " + saved.getLastName(),
                     actorId,
                     "CHANGE_NAME",
                     saved
@@ -215,7 +216,7 @@ public class AdminServiceImplementations implements AdminService {
         }
 
         try {
-            notify(admin, NotificationType.ADMIN_NAME_CHANGED, "Owner at Civok Bank has changed your name");
+            notify(admin, NotificationType.ADMIN_NAME_CHANGED, "Owner at Civok Bank has changed your name to " +  saved.getFirstName() + " " + saved.getLastName());
 
 
         } catch (NotificationServiceFailure e) {

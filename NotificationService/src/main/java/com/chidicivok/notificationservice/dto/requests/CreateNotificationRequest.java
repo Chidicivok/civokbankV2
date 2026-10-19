@@ -20,6 +20,9 @@ public class CreateNotificationRequest {
     private TargetType targetType;
 
     @NotBlank
+    private String targetName;
+
+    @NotBlank
     private String targetEmail;
 
     @NotNull

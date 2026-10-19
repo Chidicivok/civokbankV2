@@ -14,12 +14,9 @@ import tools.jackson.databind.ObjectMapper;
 public class EmailVerifierService {
 
     private final RestClient restClient;
-    private final ObjectMapper objectMapper;
-
 
     public EmailVerifierService(@Value("${email.verifier.base}") String baseUrl, ObjectMapper objectMapper) {
         this.restClient = RestClient.create(baseUrl);
-        this.objectMapper = objectMapper;
     }
 
     @Value("${email.verifier.api.key}")

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Civok Bank Notification</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .email-container {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* HEADER */
+
+        .header {
+            background-color: purple;
+            padding: 25px 30px;
+        }
+
+        .header-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .logo-cell {
+            width: 90px;
+            vertical-align: middle;
+        }
+
+        .logo {
+            display: block;
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+
+            border: 0;
+        }
+
+        .header-details {
+            vertical-align: middle;
+            padding-left: 20px;
+        }
+
+        .header-details h1 {
+            color: #ffffff;
+            font-size: 26px;
+            line-height: 32px;
+            font-weight: bold;
+
+            margin: 0 0 6px 0;
+            padding: 0;
+
+            letter-spacing: 1px;
+        }
+
+        .header-details p {
+            color: #ffffff;
+            font-size: 13px;
+            line-height: 18px;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        /* MESSAGE BODY */
+
+        .message-body {
+            background-color: #eeeeee;
+            padding: 35px 35px 45px 35px;
+            min-height: 150px;
+        }
+
+        .message-body p {
+            color: #222222;
+            font-size: 15px;
+            line-height: 24px;
+
+            margin: 0 0 18px 0;
+            padding: 0;
+        }
+
+        .message-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background-color: purple;
+            padding: 20px 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #ffffff;
+            font-size: 11px;
+            line-height: 17px;
+
+            margin: 3px 0;
+            padding: 0;
+        }
+
+        /* MOBILE */
+
+        @media only screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+            }
+
+            .header {
+                padding: 20px !important;
+            }
+
+            .logo-cell {
+                width: 70px !important;
+            }
+
+            .logo {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            .header-details {
+                padding-left: 15px !important;
+            }
+
+            .header-details h1 {
+                font-size: 22px !important;
+                line-height: 27px !important;
+            }
+
+            .header-details p {
+                font-size: 12px !important;
+                line-height: 16px !important;
+            }
+
+            .message-body {
+                padding: 30px 22px 35px 22px !important;
+            }
+
+            .message-body p {
+                font-size: 15px !important;
+                line-height: 23px !important;
+            }
+
+            .footer {
+                padding: 18px 20px !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="email-container">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <table class="header-table" role="presentation">
+            <tr>
+
+                <td class="logo-cell">
+                    <img
+                            class="logo"
+                            src="https://static.vecteezy.com/system/resources/thumbnails/067/717/823/small/eye-logo-design-vector.jpg"
+                            alt="Civok Bank Logo">
+                </td>
+
+                <td class="header-details">
+
+                    <h1>Civok Bank</h1>
+
+                    <p>
+                        Simulated Banking Process via Spring Boot Framework
+                    </p>
+
+                </td>
+
+            </tr>
+        </table>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+    <div class="message-body">
+
+        <p th:text="'Hello ' + ${name} + ','">
+            Hello,
+        </p>
+
+        <p th:text="${message}">
+            Notification message goes here.
+        </p>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+
+        <p>
+            Stanbic IBTC Towers, Walter Carrington
+        </p>
+
+        <p>
+            Contact: chidicivok@gmail.com
+        </p>
+
+        <p>
+            Spring Boot Backend Solution
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
