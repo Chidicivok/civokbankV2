@@ -1,6 +1,7 @@
 package com.chidicivok.authservice.services;
 
 import com.chidicivok.authservice.clients.dto.AdminAuthenticationResponse;
+import com.chidicivok.authservice.clients.dto.CustomerAuthenticationResponse;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
@@ -45,6 +46,36 @@ public class JwtService {
 
         return new TokenResult(token, expiresAt);
     }
+
+
+
+
+
+    public TokenResult generateCustomerToken(CustomerAuthenticationResponse custtomer) {
+
+        Instant issuedAt = Instant.now();
+
+        Instant expiresAt = issuedAt.plus(60, ChronoUnit.MINUTES);
+
+        JwtClaimsSet claims = JwtClaimsSet.builder()
+                .issuer("civok-auth-service")
+                .issuedAt(issuedAt)
+                .expiresAt(expiresAt)
+                .subject(custtomer.getCustomerEmail())
+                .claim("customerId", custtomer.getCustomerId())
+                .claim("principalType", "CUSTOMER")
+                .claim("role", "CUSTOMER")
+                .build();
+
+        JwsHeader header = JwsHeader.with(MacAlgorithm.HS256).build();
+
+        String token = jwtEncoder.encode(JwtEncoderParameters.from(header, claims)).getTokenValue();
+
+        return new TokenResult(token, expiresAt);
+    }
+
+
+
 
 
 }

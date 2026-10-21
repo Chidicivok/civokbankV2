@@ -6,4 +6,6 @@ import com.chidicivok.authservice.dtos.responses.LoginResponse;
 public interface AuthService {
 
     LoginResponse loginAdmin(LoginRequest request);
+
+    LoginResponse loginCustomer(LoginRequest request);
 }
