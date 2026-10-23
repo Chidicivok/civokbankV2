@@ -52,13 +52,11 @@ public class AccountServiceImplementation implements AccountService {
         // check if customer actually exits with that id
         CustomerResponse response = customerClient.getCustomerDetails(request.getCustomerId());
 
-        if (response == null) {
-            throw new RuntimeException("This user has no customer account");
-        }
+
 
         // check if still active
-        if(!response.isActive()) {
-            throw new RuntimeException("This customer is currently not active | contact admin to change status");
+        if(!response.active()) {
+            throw new NotPermittedException("This customer is currently not active | contact admin to change status");
         }
 
         // check if user already has an account

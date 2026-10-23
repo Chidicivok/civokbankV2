@@ -25,7 +25,7 @@ public class CustomerAccountController {
     }
 
 
-    @GetMapping("/check-balance/{accountNumber}")
+    @GetMapping("/check-balance/{customerId}")
     public ResponseEntity<AccountResponse> ViewBalance (@PathVariable Long customerId , @AuthenticationPrincipal Jwt jwt) {
         return ResponseEntity.ok(accountService.balanceEnquiry(customerId));
     }

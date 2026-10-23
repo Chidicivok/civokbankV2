@@ -28,7 +28,7 @@ public class CustomerClient {
 
 
      } catch (RestClientException e) {
-         throw new CustomerClientServiceFailure("Could not connect with Customer service");
+         throw new CustomerClientServiceFailure("Could not connect with Customer service" + e.getMessage());
      }
 
 

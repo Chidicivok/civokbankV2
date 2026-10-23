@@ -24,13 +24,9 @@ public class AdminAccountController {
         return ((Number) jwt.getClaim("adminId")).longValue();
     }
 
-
     @PostMapping("/create-account")
     public ResponseEntity<AccountResponse> createAccount (@Valid  @RequestBody CreateAccountRequest request, @AuthenticationPrincipal Jwt jwt) {
         return ResponseEntity.status(HttpStatus.CREATED).body(accountService.createAccount(request, getAdminId(jwt)));
     }
-
-
-
 
 }
